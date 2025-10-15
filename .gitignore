@@ -1,0 +1,11 @@
+*.pgn
+*.csv
+
+/chesscount/csv/games_2015.csv
+/chesscount/csv/games_2016.csv
+/chesscount/csv/games_2020.csv
+/chesscount/csv/games_2024.csv
+/chesscount/csv/position_games_2015.csv
+/chesscount/csv/position_games_2016.csv
+/chesscount/csv/position_games_2020.csv
+/chesscount/csv/position_games_2024.csv
