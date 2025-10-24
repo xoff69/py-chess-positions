@@ -1,5 +1,5 @@
-✅ Sous-répertoire C:\home\echecs\pgn\2015\ terminé : 52 fichiers, temps écoulé 26m9.3s
- Sous-répertoire C:\home\echecs\pgn\2016\ terminé : 50 fichiers, temps écoulé 21m33.7s
-us-répertoire C:\home\echecs\pgn\2020\ terminé : 52 fichiers, temps écoulé 32m54.2s
- Sous-répertoire C:\home\echecs\pgn\2024\ terminé : 53 fichiers, temps écoulé 83m31.8s
+Processing C:\home\echecs\pgn\2015\twic1103.pgn...
+✅ Sous-répertoire C:\home\echecs\pgn\2015 terminé : 52 fichiers, temps écoulé 20m38.7s
 
+Processing C:\home\echecs\pgn\2017\twic1207.pgn...
+✅ Sous-répertoire C:\home\echecs\pgn\2017 terminé : 54 fichiers, temps écoulé 34m53.4s

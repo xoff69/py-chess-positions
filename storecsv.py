@@ -46,26 +46,24 @@ def process_pgn_stream(stream, filename, game_id_start):
 
         game_index += 1
         game_id += 1
-
         headers = game.headers
 
-        # Recrée la séquence complète des coups en format PGN (lisible)
+        # moves text
         moves_text = ""
         board = game.board()
         for move in game.mainline_moves():
             moves_text += board.san(move) + " "
             board.push(move)
 
-        # Stockage des positions (FEN + Zobrist)
+        # positions
         board = game.board()
         for move in game.mainline_moves():
             board.push(move)
             zob = zobrist_hash(board)
             pos_list.append([zob, game_id, board.fen()])
 
-        # Liste étendue de champs
+        # game info (sans id)
         games_list.append([
-            game_id,
             filename,
             game_index,
             headers.get("Event", ""),
@@ -131,9 +129,9 @@ def generate_csvs(root_dir):
             game_writer = csv.writer(gfile)
             pos_writer = csv.writer(pgfile)
 
-            # Entêtes CSV
+            # entêtes CSV (sans id)
             game_writer.writerow([
-                "id", "file_name", "game_index", "event", "site", "date", "round",
+                "file_name", "game_index", "event", "site", "date", "round",
                 "white", "black", "result", "eco", "moves"
             ])
             pos_writer.writerow(["zobrist", "game_id", "fen"])
@@ -151,9 +149,6 @@ def generate_csvs(root_dir):
         m, s = divmod(elapsed, 60)
         print(f"✅ Sous-répertoire {subdir} terminé : {len(pgn_files)} fichiers, temps écoulé {int(m)}m{s:.1f}s")
 
-# ------------------------------
-# Main
-# ------------------------------
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
