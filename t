@@ -1,10 +1,17 @@
-python storecsv.py C:\\home\\echecs\\pgn\\2015
+python storecsv.py C:\\developpement\\pgn\\2016
 
 
 
-docker run -d   --name pg   -e POSTGRES_PASSWORD=postgres   -v "C:\home\developpement\python\chess-py\chesscount\csv:/data"   -p 5432:5432   postgres:16
+docker run -d `
+  --name chessvger `
+  -e POSTGRES_PASSWORD=postgres `
+  -v "C:\developpement\chessvger\python\chess-py\chesscount\csv:/data" `
+  -v "C:\developpement\chessvger\python\chess-py\chesscount\pgdata:/var/lib/postgresql/data" `
+  -p 5434:5432 `
+  postgres:16
 
-docker exec -it pg psql -U postgres
+
+docker exec -it chessvger psql -U postgres
 -- Table des parties
 --najdorf
 SELECT count(*)
@@ -21,34 +28,35 @@ LIMIT 20;
 
 $ ls C:\\home\\echecs\\pgn\\
 2025
-2011 x
-2013 x
-2015  X
-2017   X
+
+
+KingBase x x x
+2015  x  x  x
+2011 x x x
+2013 x x x
+2017   x
 2019 x
 2021 x
 2023 x
-
 collections x
 events2 x
-openings2 x
+openings2  x
 pgnb x
 players2 x
-twic1998 x
+twic1998  x
 twic2000 x
-twic2002 x
+twic2002  x
 twic2004 x
 twic2006 x
 twic2008 x
 twic2010 x
 2012 x
 2014 x
-2016   X
+2016   x
 2018 x
 2020 x
-2022 x
+2022  x
 2024  x
-KingBase x
 events1 x
 openings1 x
 pgna x
